@@ -23,21 +23,6 @@ class manifold:
         p_t = stochastic matrix
         p = probability of manifold position
         """
-        # initialize manifold points
-        # n_samp = x.shape[1]
-        # g = [0, x[:, np.random.randint(0, n_samp-1, self.n)]]
-        # intialize the stochastic map
-        # iterate over samples
-        # p_t = []
-        # for w in range(n_samp):
-        #     # get normalization
-        #     z = np.sum([prob_map(x[:, w], g[1][:, wcount], l) for wcount in range(self.n)])
-        #     # get iniitial transition prob, rows = samples, cols = manifold
-        #     p_t += [[prob_map(x[:, w], g[1][:, wcount], l) / z for wcount in range(self.n)]]
-        # p_t rows are samples, columns are manifold points
-        # p_t = [0, np.array(p_t)]
-        # perform algorithm
-
         self.manifold = x[:, np.random.randint(0, x.shape[1]-1, self.m)]
         g = self.manifold
         self.prob_manifold = np.ones(self.m).astype('f') / self.m
@@ -57,29 +42,6 @@ class manifold:
             g = self.manifold
             # update while loop counter
             n_iter += 1
-
-            # # update gammas
-            # g[0] = g[1]
-            # temp = []
-            # # interate over each manifold point
-            # for wg in range(self.n):
-            #     temp += [[np.sum(x[wdim, :]*p_t[1][:, wg]) / (n_samp*p[wg]) for wdim in range(x.shape[0])]]
-            # g[1] = np.array(temp).transpose()
-            #
-            # p_t[0] = p_t[1]
-            # # update partition function, and transition probs
-            # for w in range(n_samp):
-            #     z = np.sum([p[wcount] * prob_map(x[:, w], g[1][:, wcount], self.lagrange) for wcount in range(self.n)])
-            #     temp = [p[wcount] * prob_map(x[:, w], g[1][:, wcount], self.lagrange) / z for wcount in range(self.n)]
-            #     p_t[1][w, :] = np.array(temp)
-            #
-            # # compute delta gamma
-            # dg = np.sqrt(np.sum((g[1] - g[0])**2, 0)).max()
-            # # update counter
-            # n_iter += 1
-        # TODO revisit error catching
-        # if np.isnan(dg):
-        #     a = b
         self.exit_iterations = n_iter
 
     def _compute_transition_prob(self, x):

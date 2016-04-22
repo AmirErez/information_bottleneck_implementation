@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 # Estimate the fraction of cells in each population using manifold points
 # ====================================================
 # ====================================================
+m = reload(m)
 No = 500 # number of data points
 N1 = 500
 M = 100 # number of manifold points
