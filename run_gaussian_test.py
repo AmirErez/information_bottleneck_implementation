@@ -10,8 +10,8 @@ import manifold as m
 import binary_classification_stats as bcs
 import matplotlib.pyplot as plt
 %matplotlib inline
-# TODO make plotting functions to separate simulation code from plots
-# TODO Test the ability to identify Gaussians separated by different distances, use AUC to measure the separation of population.
+# TODO:0 make plotting functions to separate simulation code from plots
+# DONE:0 Test the ability to identify Gaussians separated by different distances, use AUC to measure the separation of population.
 
 
 # ====================================================

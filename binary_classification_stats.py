@@ -2,7 +2,7 @@ import numpy as np
 from scipy.integrate import trapz
 from scipy.stats import beta
 
-# DOING:0 Separate ROC analysis from probability density model, consider puting the Beta distribution as an input class for my custom ROC analysis.
+# DONE:20 Separate ROC analysis from probability density model, consider puting the Beta distribution as an input class for my custom ROC analysis.
 class ROC:
     def __init__(self, data, labels):
         """
@@ -22,7 +22,7 @@ class ROC:
         z = float(self.N_negatives + self.N_positives)
         return [self.N_negatives / z, self.N_positives / z]
 
-    # DONE:70 double check that I am computing the ROC correctly
+    # DONE:30 double check that I am computing the ROC correctly
     def roc_curve(self):
         """
         ROC curves
@@ -46,7 +46,7 @@ class ROC:
             count += 1
         return [false_positive, true_positive]
 
-    # DONE:20 precision recall calculation, plot and AUC
+    # DONE:10 precision recall calculation, plot and AUC
     def precision_recall(self):
         """
         Precision and recall
