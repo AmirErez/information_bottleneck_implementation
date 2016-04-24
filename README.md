@@ -14,4 +14,4 @@ In this example, I present simulated data that highlights the aforementioned app
 
 Example, Identifying mixtures of Gaussian Distributions
 -------------------------------------------------------
-![histograms](figs/bimodal_gauss_sampling.pdf)
+![histograms](figs/bimodal_gauss_sampling.pdf?raw=true)
