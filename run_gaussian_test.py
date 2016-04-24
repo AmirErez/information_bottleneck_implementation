@@ -57,10 +57,10 @@ plots.manifold_hist(roc_raw_data[idx].data,
 # ============================================================
 # ============================================================
 
-idx = 0
+idx = 8
 rfp, rtp = roc_raw_data[idx].roc_curve()
 mfp, mtp = roc_manifold[idx].roc_curve()
-plt.figure()
+plt.figure(figsize=(5, 4))
 plt.plot([0, 1], [0, 1], '--', color='k',
          linewidth=2.5, alpha=0.5,
          label='Random, AUROC : 0.5')
@@ -72,10 +72,11 @@ plt.legend(loc=0)
 plt.xlabel('False Positive Rate', fontsize=15)
 plt.ylabel('True Positive Rate', fontsize=15)
 plt.tight_layout()
+plt.savefig('figs/roc.png')
 
 data_auroc = [wroc.auroc() for wroc in roc_raw_data]
 manifold_auroc = [wroc.auroc() for wroc in roc_manifold]
-plt.figure()
+plt.figure(figsize=(5, 4))
 plt.plot(dist, data_auroc, '-', color='r',
          linewidth=2.5, label='Raw Data')
 plt.plot(dist, manifold_auroc, '-', color='blue',
@@ -83,3 +84,5 @@ plt.plot(dist, manifold_auroc, '-', color='blue',
 plt.xlabel(r'$\mu_1 - \mu_0$', fontsize = 20)
 plt.ylabel('AUROC', fontsize=15)
 plt.ylim([0.5, 1.1])
+plt.tight_layout()
+plt.savefig('figs/auroc.png', fmt='png')
