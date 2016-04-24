@@ -44,7 +44,7 @@ plots = reload(plots)
 idx = 15
 plots.manifold_hist(roc_raw_data[idx].data,
                     roc_manifold[idx].data,
-                    savename='figs/bimodal_gauss_sampling.pdf')
+                    savename='figs/bimodal_gauss_sampling.png')
 
 plt.plot(roc_raw_data[idx].data,
          roc_raw_data[idx].labels,'.', color='r')
