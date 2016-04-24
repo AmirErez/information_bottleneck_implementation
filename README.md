@@ -1,5 +1,5 @@
 
-Single Cell Data compressions
+Single Cell Data Compression
 ============================
 An implementation of Chigirev and Bialek 2003
 
