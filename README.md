@@ -14,4 +14,4 @@ In this example, I present simulated data that highlights the aforementioned app
 
 Example, Identifying mixtures of Gaussian Distributions
 -------------------------------------------------------
-![histograms](figs/bimodal_gauss_sampling.pdf?raw=true)
+![histograms](https://github.com/robert-vogel/information_bottleneck_implementation/blob/master/figs/bimodal_gauss_sampling.pdf)
