@@ -10,7 +10,8 @@ This repository is a simple implementation of a data compression algorithm first
 
 In studying biological phenomena, individuals are often tasked to find subpopulations of individual cells in high dimensional data.  This task can be challenging due to the endogenous variability of molecules (e.g. protein) among single cell clones.  Furthermore, the task is becoming more challenging with technological advances such as Mass Cyotmetry and Single cell sequencing, in which measurements of single cells ranges from fifty to thousands of dimensions.
 
-In this example, I present simulated data that represents measurements obtained by Flow and Mass Cytometry.  I use these simulations to show how data compression provides a means to find populations of cells with high sensitivity.  Lastly, I use this as an example for people interested in applying this technique to their own real data.
+In this example, I present simulated data that highlights the aforementioned application.  I use these simulations to show how data compression provides a means to find populations of cells with high sensitivity.  Lastly, I use this as an example for people interested in applying this technique to their own real data.
 
 Example, Identifying mixtures of Gaussian Distributions
 -------------------------------------------------------
+![histograms](figs/bimodal_gauss_sampling.pdf)

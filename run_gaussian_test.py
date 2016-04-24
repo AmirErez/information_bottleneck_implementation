@@ -8,6 +8,8 @@ import simulation_data as sim
 import numpy as np
 import manifold as m
 import binary_classification_stats as bcs
+import plots
+%matplotlib inline
 import matplotlib.pyplot as plt
 %matplotlib inline
 # TODO:0 make plotting functions to separate simulation code from plots
@@ -20,13 +22,14 @@ import matplotlib.pyplot as plt
 # ====================================================
 # ====================================================
 m = reload(m)
+
 No = 500 # number of data points
 N1 = 500
 M = 100 # number of manifold points
 labels = np.hstack([np.zeros(No), np.ones(N1)])
 roc_raw_data = []
 roc_manifold = []
-dist = np.linspace(0.1, 4, 10)
+dist = np.linspace(0.1, 4, 20)
 for wdist in dist:
     # simulate two gaussians
     sim_data = np.hstack([np.random.randn(No),
@@ -36,9 +39,13 @@ for wdist in dist:
     roc_raw_data += [bcs.ROC(tmp_data, labels)]
     mlabels = tmp_manifold.get_manifold_labels(tmp_data, labels)
     roc_manifold += [bcs.ROC(tmp_manifold.manifold.squeeze(), mlabels)]
+ls
+plots = reload(plots)
+idx = 15
+plots.manifold_hist(roc_raw_data[idx].data,
+                    roc_manifold[idx].data,
+                    savename='figs/bimodal_gauss_sampling.pdf')
 
-
-idx = 9
 plt.plot(roc_raw_data[idx].data,
          roc_raw_data[idx].labels,'.', color='r')
 plt.plot(roc_manifold[idx].data,
