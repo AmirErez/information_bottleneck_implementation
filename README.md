@@ -14,4 +14,7 @@ In this example, I present simulated data that highlights the aforementioned app
 
 Example, Identifying mixtures of Gaussian Distributions
 -------------------------------------------------------
+
+Consider samples of two Gaussian distributions, in which their means are designated as $\mu_0$ and $\mu_1$, with a distance between them, $\Delta$.
+
 ![histograms](https://github.com/robert-vogel/information_bottleneck_implementation/blob/master/figs/bimodal_gauss_sampling.png)

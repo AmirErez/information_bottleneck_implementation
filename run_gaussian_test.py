@@ -21,7 +21,6 @@ import matplotlib.pyplot as plt
 # Estimate the fraction of cells in each population using manifold points
 # ====================================================
 # ====================================================
-m = reload(m)
 
 No = 500 # number of data points
 N1 = 500
@@ -39,19 +38,24 @@ for wdist in dist:
     roc_raw_data += [bcs.ROC(tmp_data, labels)]
     mlabels = tmp_manifold.get_manifold_labels(tmp_data, labels)
     roc_manifold += [bcs.ROC(tmp_manifold.manifold.squeeze(), mlabels)]
-ls
-plots = reload(plots)
+
+# ============================================================
+# ============================================================
+# plot results
+# ============================================================
+# ============================================================
+
 idx = 15
 plots.manifold_hist(roc_raw_data[idx].data,
                     roc_manifold[idx].data,
                     savename='figs/bimodal_gauss_sampling.png')
 
-plt.plot(roc_raw_data[idx].data,
-         roc_raw_data[idx].labels,'.', color='r')
-plt.plot(roc_manifold[idx].data,
-         roc_manifold[idx].labels, 'x', color='b')
-plt.ylim([-0.1, 1.1])
 
+# ============================================================
+# ============================================================
+# roc analysis
+# ============================================================
+# ============================================================
 
 idx = 0
 rfp, rtp = roc_raw_data[idx].roc_curve()
