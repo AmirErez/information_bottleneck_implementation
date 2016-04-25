@@ -4,27 +4,28 @@ Run implementation of Chigirev and Bialek NIPs 2003 on mixture of gaussians.
 
 import os
 os.chdir('/Users/oboe/Documents/chigirev')
-import simulation_data as sim
+import tools.simulation_data as sim
 import numpy as np
-import manifold as m
-import binary_classification_stats as bcs
-import plots
+import tools.manifold as m
+import tools.binary_classification_stats as bcs
+from tools import plots
 %matplotlib inline
+
 import matplotlib.pyplot as plt
-%matplotlib inline
+
 # TODO:0 make plotting functions to separate simulation code from plots
 # DONE:0 Test the ability to identify Gaussians separated by different distances, use AUC to measure the separation of population.
 
+# ====================================================
+# ====================================================
+# Simulate and applying information bottleneck to samples from a mixture of
+# gaussians that are separated by various distances.
+# ====================================================
+# ====================================================
 
-# ====================================================
-# ====================================================
-# Estimate the fraction of cells in each population using manifold points
-# ====================================================
-# ====================================================
-
-No = 500 # number of data points
-N1 = 500
-M = 100 # number of manifold points
+No = 500  # number of negatives
+N1 = 500  # number of positives
+M = 100  # number of manifold points
 labels = np.hstack([np.zeros(No), np.ones(N1)])
 roc_raw_data = []
 roc_manifold = []
